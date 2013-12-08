@@ -1,0 +1,8 @@
+1234 Homer 18.5
+1223 Bart 25.5
+9341 Lisa 30.0
+3420 Marge 28.4
+8730 Abram 26.7
+1876 Barns 27.8
+1342 Smiters 23.0
+7654 Milhouse 29.7
