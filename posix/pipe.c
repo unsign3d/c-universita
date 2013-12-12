@@ -37,8 +37,5 @@ int main(int argc, char const *argv[])
 			break;
 	}
 
-	pipe(fd);
-
-
 	return 0;
 }
