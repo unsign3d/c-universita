@@ -23,12 +23,13 @@ int main(int argc, char const *argv[])
 			break;
 		case 0: // eseguo il codice del figlio
 			//il figlio chiude l'input (chiudo in scrittura)
-			close(fd[0]);
+			if(close(fd[0]) == -1) return 1 ; //gestisco l'eccezione
 			//per scrivere sul pipe uso SYSCALL write
 			write(fd[1], string, (strlen(string) +1));
 			break;
 		default: // eseguo il codice del padre
-			close(fd[1]); //chiudo l'output
+			//chiudo l'output
+			if(close(fd[1]) == -1) return 1 ; 
 			//uso la read (API) per leggere dal pipe
 			read(fd[0], readbuffer, sizeof(readbuffer));
 			//scrivo il messaggio
