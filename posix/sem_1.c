@@ -10,6 +10,8 @@
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/sem.h>
+
+#define SECRET_KEY 123
 /* in linux is not defined */
 union semun {
   int              val;    /* Value for SETVAL */
@@ -26,7 +28,7 @@ int main(int argc, char const *argv[])
 	union semun sem_arg;
 
 	/* create a token */
-	if((key = ftok("/tmp", 123)) == -1) {
+	if((key = ftok("/tmp", SECRET_KEY)) == -1) {
 		printf("[-] Error on ftok\n");
 		return 1;
 	}
